@@ -10,7 +10,12 @@ console.log(destination);
 const travelDate = '2024-03-15';
 
 /* Task 3b: Change the value */
-travelDate = 'something else';  //<-this will error out.
+try {
+    travelDate = 'something else';  //<-this will error out.
+} catch (error) {
+    const style = 'color: red; background: rgba(255, 0, 0, .25); padding: 0 5px 0 5px; border-radius: 2px;';
+    console.log(`%c${error}`, style);
+}
 
 /*
    Observations:
