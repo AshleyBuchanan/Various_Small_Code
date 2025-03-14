@@ -74,37 +74,83 @@ function SecretData() {
     }
 }
 
-const SecureClass = new SecretData();
-const instance = new SecureClass();
+// const SecureClass = new SecretData();
+// const instance = new SecureClass();
 
-console.log('instance.getSecret() ->', instance.getSecret());
-console.log('instance.privateData ->', instance.privateData);
-console.log('instance.setSecret(\'new private data\');',);
-instance.setSecret('new private data');
-console.log('instance.getSecret() ->', instance.getSecret());
+// console.log('instance.getSecret() ->', instance.getSecret());
+// console.log('instance.privateData ->', instance.privateData);
+// console.log('instance.setSecret(\'new private data\');',);
+// instance.setSecret('new private data');
+// console.log('instance.getSecret() ->', instance.getSecret());
 
 
-const array1 = [1, 2, 3].map(function (x) {
-    return x * 2;
-});
+// const array1 = [1, 2, 3].map(function (x) {
+//     return x * 2;
+// });
 
-const array2 = [1, 2, 3].map((x) => {
-    return x * 2;
-});
+// const array2 = [1, 2, 3].map((x) => {
+//     return x * 2;
+// });
 
-const array3 = [1, 2, 3].map(x => x * 2);
+// const array3 = [1, 2, 3].map(x => x * 2);
 
-console.log(array1, array2, array3);
+// console.log(array1, array2, array3);
 
-const cat = {
-    name: 'Bubs',
-    eat: function () {
-        console.log(this);
-        return `${this.name} chows down`;
+// const cat = {
+//     name: 'Bubs',
+//     eat: function () {
+//         console.log(this);
+//         return `${this.name} chows down`;
+//     },
+//     meow: () => {
+//         console.log(this);
+//         return `${this.name} says MEOW!!!`;
+//     },
+//     scratch: () => (`${this.name} scratches post`)
+// };
+
+function sum() {
+    // Array.from() fixes the not array issue
+    return Array.from(arguments).reduce((sum, val) => {
+        return sum + val;
+    });
+}
+
+function max() {
+    return Array.from(arguments).reduce((max, currentValue) => {
+        return currentValue > max ? currentValue : max;
+    });
+}
+
+const newMax = (...arguments) => {
+    return arguments.reduce((max, currentValue) => {
+        return currentValue > max ? currentValue : max;
+    });
+}
+
+const tea = {
+    type: 'oolong',
+    name: 'winter sprout',
+    origin: 'taiwan'
+}
+
+
+const shoppingCart = [
+    {
+        name: 'honey orchid',
+        quantity: 2,
+        price: 13.5
     },
-    meow: () => {
-        console.log(this);
-        return `${this.name} says MEOW!!!`;
-    },
-    scratch: () => (`${this.name} scratches post`)
-};
+    {
+        name: 'african solstice',
+        quantity: 4,
+        price: 25.99
+    }
+];
+console.log(shoppingCart)
+
+const updatedCart = [
+    ...shoppingCart
+]
+console.log(shoppingCart)
+console.log(updatedCart)
