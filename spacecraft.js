@@ -1,3 +1,5 @@
+console.log('%cSPACECRAFT.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px;')
+
 /* Task 1: No Parameters: Activate Hyperdrive */
 const activateHyperdrive = () => console.log('Hyperdrive activated!');
 activateHyperdrive();

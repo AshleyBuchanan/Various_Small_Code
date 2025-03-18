@@ -1,3 +1,5 @@
+console.log('%cSCRATCH.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px')
+console.log('I was just testing what I\'d learned');
 // let Person = function (name, birthYear, gender) {
 //     this.name = name;
 //     this.birthYear = Number(birthYear);

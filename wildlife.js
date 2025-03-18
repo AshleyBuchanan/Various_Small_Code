@@ -1,3 +1,5 @@
+console.log('%cWILDLIFE.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px')
+
 /* Task 1: Track Animal Sightings */
 // TODO: Write a function with rest parameters to print sightings of different animals 
 // within the sanctuary. This function should accept an arbitrary number of animal names.

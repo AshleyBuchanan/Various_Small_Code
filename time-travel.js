@@ -1,3 +1,5 @@
+console.log('%cTIME-TRAVEL.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px')
+
 /* Task 1: Declare a Destination Variable */
 let destination = 'Ancient Egypt';
 console.log(destination);
