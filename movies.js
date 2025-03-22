@@ -12,6 +12,6 @@ const movies = [
 ];
 
 movies.forEach((element, index) => {
-    console.log(`${index}) ${element.title} (${element.yearReleased}) by ${element.director}`)
+    console.log(`${index}) ${element.title} (${element.yearReleased}) dicrected by ${element.director}`)
 });
 
