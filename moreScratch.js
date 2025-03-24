@@ -44,4 +44,58 @@ const forEach3 = function (callback, thisArg) {
 };
 const plate = [2, 4, 8, 16];
 Array.prototype.forEach3 = forEach3
-plate.forEach3((el, i, arr) => { console.log(el, i, arr) })
+plate.forEach3((el, i, arr) => { console.log(el, i, arr) });
+
+
+
+const todos = [
+    {
+        id: 1,
+        text: 'walk the dog',
+        priority: 'high'
+    },
+    {
+        id: 2,
+        text: 'walk the chickens',
+        priority: 'medium'
+    },
+    {
+        id: 3,
+        text: 'feed the cats',
+        priority: 'low'
+    },
+    {
+        id: 4,
+        text: 'put out the fire in my garage',
+        priority: 'very high'
+    }
+]
+
+const todoText = todos.map(function (todo) {
+    return todo.text;
+});
+console.log(todoText);
+
+
+function myMap(arr, callback) {
+    const mappedArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        mappedArray.push(callback(arr[i], i, arr));
+    }
+    return mappedArray;
+}
+const newArray = myMap(todos, function (value) { return value.id })
+console.log(newArray);
+
+
+function myMap2(callback, thisArg) {
+    const mappedArray = [];
+    for (let i = 0; i < this.length; i++) {
+        mappedArray.push(callback.call(thisArg, this[i], this));
+    }
+    return mappedArray;
+}
+Array.prototype.myMap2 = myMap2
+const niceArray = [1, 3, { 5: { 6: 1 } }, 7];
+const nicerArray = niceArray.myMap2(function (value) { return value });
+console.log(nicerArray);
