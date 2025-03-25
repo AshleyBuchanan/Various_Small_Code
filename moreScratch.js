@@ -140,3 +140,54 @@ const noVowels = words.filter(function (word) {
     return (!hasVowels(word));
 });
 console.log('noVowels:', noVowels);
+
+const long = words.some(function (word) {
+    return word.length > 25;
+});
+console.log(long);
+
+const thy = words.every(function (word) {
+    return word.includes('thyroid');
+});
+console.log(thy);
+
+
+const mySome = function (arr, str) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes(str)) return true
+    }
+    return false;
+}
+console.log(mySome(words, 'thyroid'));
+
+const mySome2 = function (arr, callback) {
+    for (let i = 0; i < arr.length; i++) {
+        if (callback(arr[i], i, arr)) return true;
+    }
+    return false;
+}
+
+const yes = mySome2(words, function (word) {
+    return word.includes('thyroid')
+});
+console.log(yes);
+
+
+
+
+const mySome3 = function (callback, thisArg) {
+    for (let i = 0; i < this.length; i++) {
+        callback.call(thisArg, this[i], i, this);
+    }
+}
+Array.prototype.mySome3 = mySome3;
+const r = words.mySome3(function (word) {
+    return word.includes('thyroid')
+});
+
+const testScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93];
+
+const s75 = testScores.find(function (score) {
+    return score > 75;
+});
+console.log(s75)
