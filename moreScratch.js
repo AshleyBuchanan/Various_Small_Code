@@ -99,3 +99,44 @@ Array.prototype.myMap2 = myMap2
 const niceArray = [1, 3, { 5: { 6: 1 } }, 7];
 const nicerArray = niceArray.myMap2(function (value) { return value });
 console.log(nicerArray);
+
+
+
+
+const words = [
+    'immunoelectrophoretically',
+    'rotavator',
+    'tsktsk',
+    'psychophyicotherapeutics',
+    'squirrelled',
+    'crypt',
+    'uncopyrightable',
+    'cysts',
+    'pseudopseudohypoparathyroidism',
+    'unimaginatively'
+]
+
+const longWords = words.filter(function (word) { return word.length >= 20 });
+console.log('longWords:', longWords);
+
+const coolWords = words.filter(function (w) {
+    return w[0] === 'u' || w[0] === 'c';
+});
+console.log('coolWords:', coolWords);
+
+function hasVowels(word) {
+    for (let i = 0; i < word.length; i++) {
+        // if (word[i] === 'a' ||
+        //     word[i] === 'e' ||
+        //     word[i] === 'i' ||
+        //     word[i] === 'o' ||
+        //     word[i] === 'u') { return true }
+        if ('aeiou'.indexOf(word[i]) > -1) { return true }
+    }
+    return false;
+}
+
+const noVowels = words.filter(function (word) {
+    return (!hasVowels(word));
+});
+console.log('noVowels:', noVowels);

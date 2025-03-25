@@ -1,3 +1,5 @@
+console.log('%cMOVIES.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px')
+
 const movies = [
     { title: "Inception", director: "Christopher Nolan", yearReleased: 2010 },
     { title: "Interstellar", director: "Christopher Nolan", yearReleased: 2014 },

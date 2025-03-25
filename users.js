@@ -1,3 +1,5 @@
+console.log('%cUSERS.js', 'color:black; background-color:rgb(64,64,255); padding:0 150px 0 150px')
+
 const users = [
     { firstName: "Alice", lastName: "Johnson", points: 120 },
     { firstName: "Bob", lastName: "Smith", points: 99 },
