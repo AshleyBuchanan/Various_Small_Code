@@ -191,3 +191,38 @@ const s75 = testScores.find(function (score) {
     return score > 75;
 });
 console.log(s75)
+
+
+const str = 'lollapalooza';
+const charFreq = {};
+
+for (let char of str) {
+    if (charFreq[char]) {
+        charFreq[char] += 1;
+    } else {
+        charFreq[char] = 1;
+    }
+}
+console.log(charFreq);
+
+
+let evens = [2, 4, 6, 8, 10];
+let startValue = 30;
+const reduction = evens.reduce(function (accumulator, nextValue) {
+    return accumulator + nextValue;
+}, startValue);
+console.log(reduction);
+
+const fightModule = (function () {
+    let harry = 'potter';
+    let voldemort = 'he who must not be named';
+
+    function fight(char1, char2) {
+        const attack1 = Math.floor(Math.random() * char1.length);
+        const attack2 = Math.floor(Math.random() * char2.length);
+        return attack1 > attack2 ? `${char1} wins` : `${char2} wins`
+    }
+    return {
+        fight: fight
+    }
+})();
