@@ -226,3 +226,24 @@ const fightModule = (function () {
         fight: fight
     }
 })();
+
+const bannedHashTags = new Set(
+    [
+        'nofilter',
+        'justsaying',
+        'winning',
+        'yolo'
+    ]
+);
+
+bannedHashTags.add('bestlife').add('selfie');
+
+function filterHashTags(tags) {
+    return tags.filter((tag) => !bannedHashTags.has(tag));
+}
+
+const susansTags = ['fluffy', 'sweet', 'nofilter', 'omg'];
+
+console.log(
+    filterHashTags(susansTags)
+);
