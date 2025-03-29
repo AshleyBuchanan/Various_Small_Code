@@ -247,3 +247,4 @@ const susansTags = ['fluffy', 'sweet', 'nofilter', 'omg'];
 console.log(
     filterHashTags(susansTags)
 );
+
