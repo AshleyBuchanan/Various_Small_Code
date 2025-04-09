@@ -56,3 +56,97 @@ class HashMap {
         return this._items[hashedKey];
     }
 }
+
+class PersonNode {
+    constructor(name) {
+        this.name = name;
+        this.adjacent = new Set();
+    }
+}
+
+class FriendGraph {
+    constructor() {
+        this.nodes = new Set();
+    }
+    addPerson(node) {
+        this.nodes.add(node);
+    }
+    addPeople(peopleList) {
+        for (let node of peopleList) {
+            this.addPerson(node);
+        }
+    }
+    setFriends(person1, person2) {
+        person1.adjacent.add(person2);
+        person2.adjacent.add(person1);
+    }
+    areConnectedBFS(person1, person2) {
+        let toVisitQueue = [person1];
+        let seen = new Set(toVisitQueue);
+
+        while (toVisitQueue.length) {
+            let currentPerson = toVisitQueue.shift();
+            console.log(`BFS > ${currentPerson.name}`);
+            if (currentPerson === person2) return true;
+            for (let neighbor of currentPerson.adjacent) {
+                if (!seen.has(neighbor)) {
+                    toVisitQueue.push(neighbor);
+                    seen.add(neighbor);
+                }
+            }
+        }
+        return false;
+    }
+    areConnectedDFS(person1, person2) {
+        let toVisitStack = [person1];
+        let seen = new Set(toVisitStack);
+
+        while (toVisitStack.length) {
+            let currentPerson = toVisitStack.pop();
+            console.log(`DFS > ${currentPerson.name}`);
+            if (currentPerson === person2) return true;
+            for (let neighbor of currentPerson.adjacent) {
+                if (!seen.has(neighbor)) {
+                    toVisitStack.push(neighbor);
+                    seen.add(neighbor);
+                }
+            }
+        }
+        return false;
+    }
+    areConnectedRecursive(person1, person2, seen = new Set([person1])) {
+        //DFS
+        if (person1 === person2) return true;
+        for (let neighbor of person1.adjacent) {
+            if (!seen.has(neighbor)) {
+                seen.add(neighbor);
+                if (this.areConnectedRecursive(neighbor, person2, seen)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+const homer = new PersonNode('Homer');
+const marge = new PersonNode('Marge');
+const maggie = new PersonNode('Maggie');
+const lisa = new PersonNode('Lisa');
+const grampa = new PersonNode('Grampa');
+
+const friends = new FriendGraph();
+friends.addPeople([homer, marge, maggie, lisa, grampa]);
+friends.setFriends(homer, marge);
+friends.setFriends(homer, maggie);
+friends.setFriends(homer, lisa);
+friends.setFriends(marge, maggie);
+friends.setFriends(maggie, lisa);
+friends.setFriends(lisa, grampa);
+
+const moe = new PersonNode('Moe');
+const barney = new PersonNode('Barney');
+const lenny = new PersonNode('Lenny');
+friends.addPeople([moe, barney, lenny]);
+friends.setFriends(moe, barney);
+friends.setFriends(barney, lenny);
