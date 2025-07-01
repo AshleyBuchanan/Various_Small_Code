@@ -1,19 +1,23 @@
 import { useState } from 'react';
 //import NumbersList from './NumbersList';
-//import Circle from './Circle';
+import Circle from './Circle';
 import ColoredCircles from './ColoredCircles';
+import Dice from './Dice';
 import './App.css';
+
 
 function App() {
   return (
     <>
-        {/* <NumbersList/> */}
-        {/* <Circle color="red" idx={8}/>
-        <Circle color="lightgreen" idx={8}/>
-        <Circle color="lightblue" idx={8}/> */}
+        {/* <Dice numDice={9} maxVal={6}/> */}
         <ColoredCircles/>
     </>
   )
 }
 
 export default App
+
+
+//react life cycle
+//dispatch to original state data
+//

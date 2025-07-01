@@ -1,0 +1,17 @@
+.dice {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100px;
+    margin: 20px;
+    background-color: aquamarine;
+    color: black;
+}
