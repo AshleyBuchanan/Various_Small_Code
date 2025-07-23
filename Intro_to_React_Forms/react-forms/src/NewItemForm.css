@@ -1,0 +1,49 @@
+.NewItemForm {
+    height: 24px;
+    background-color: hsl(0, 0%, 10%);
+    border-radius: 5px;
+    box-shadow:
+        0 -1px 1px hsla(0, 0%, 100%, 50%),
+        0 2px 5px black;
+    margin: 4px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    text-align: center;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+input.qty {
+    max-width: 60px;
+    border-left: 2px solid hsla(0, 0%, 0%, 50%);
+    color: white;
+    background: transparent;
+    outline: none;
+}
+
+button {
+    font-size: smaller;
+    flex: 0 0 61px;
+    background-color: hsl(0, 0%, 15%);
+    color: hsl(0, 0%, 70%);
+    padding: 0;
+    border-right: 2px solid hsla(0, 0%, 0%, 50%);
+    border-radius: 5px 0 0 5px;
+    cursor: default;
+}
+
+.NewItemForm button:hover {
+    color: white;
+    background-color: hsl(0, 0%, 40%);
+}
