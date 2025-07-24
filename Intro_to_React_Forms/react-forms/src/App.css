@@ -1,5 +1,7 @@
 #root {
     padding: 2em;
     text-align: center;
-    width: 100%;
+    max-width: 700px;
+    min-width: 400px;
+    margin: auto;
 }

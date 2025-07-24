@@ -19,8 +19,8 @@ const NewItemForm = ({addItem}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addItem(formData.name, formData.qty);
-        setFormData(INITIAL_STATE)
+        addItem({...formData});
+        setFormData(INITIAL_STATE);
     }
 
     return (
@@ -36,7 +36,7 @@ const NewItemForm = ({addItem}) => {
             />
             <input
                 className="qty"
-                type="text"
+                type="number"
                 name="qty"
                 placeholder="qty"
                 value={formData.qty}
